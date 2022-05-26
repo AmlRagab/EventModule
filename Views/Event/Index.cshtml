@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EventModule.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="AllEvent" class="section about">
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col">
+                    <h1>Players</h1>
+                </div>
+                <div class="col text-right">
+                    <a asp-action="Create" class="btn btn-success">Create New</a>
+                </div>
+            </div>
+
+            <br />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EnglishTilte)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ArabicTitle)
+                        </th>
+
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ArabicTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EnglishTilte)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EventId }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Details", "Details", new { id = item.EventId }, new { @class = "btn btn-secondary" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EventId }, new { @class = "btn btn-danger" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div></div></section>

@@ -1,0 +1,57 @@
+﻿@model EventModule.Models.Event
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section  class="section about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Create" method="post">
+                    <div class="form-group">
+                        <label asp-for="ArabicTitle" class="control-label"></label>
+                        <input asp-for="ArabicTitle" class="form-control" />
+                        <span asp-validation-for="ArabicTitle" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EnglishTilte" class="control-label"></label>
+                        <input asp-for="EnglishTilte" class="form-control" />
+                        <span asp-validation-for="EnglishTilte" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" class="form-control" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Address" class="control-label"></label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StartDate" class="control-label"></label>
+                        <input asp-for="StartDate" class="form-control" />
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EndDate" class="control-label"></label>
+                        <input asp-for="EndDate" class="form-control" />
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label asp-for="Source" class="control-label"></label>
+                        <input asp-for="Source.Name" class="form-control" />
+                        <span asp-validation-for="Source" class="text-danger"></span>
+                    </div>
+                  
+                    
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div></div></section>
